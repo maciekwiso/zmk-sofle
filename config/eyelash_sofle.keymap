@@ -36,6 +36,8 @@
     macros {
         win_choose: win_choose {
             compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo 2 &kp LGUI>
@@ -49,7 +51,7 @@
         mtwc: mtwc {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&win_choose>, <&kp>;
         };
@@ -117,7 +119,7 @@
             bindings = <
 &none           &none           &none           &none           &none           &none             &none           &none           &none           &none           &none           &none           &none         
 &none           &none           &none           &none           &none           &none             &none           &none           &none           &none           &none           &none           &none         
-&none           &kp LA(TAB)     &kp LC(LA(TAB)) &kp LC(TAB)     &kp ENTER       &none             &none           &none           &none           &none           &none           &none           &none         
+&none           &kp LA(TAB)     &kp LC(LS(TAB)) &kp LC(TAB)     &kp ENTER       &none             &none           &none           &none           &none           &none           &none           &none         
 &none           &none           &none           &none           &none           &none             &none           &none           &none           &none           &none           &none           &none         
 &trans          &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans          &trans         
             >;
