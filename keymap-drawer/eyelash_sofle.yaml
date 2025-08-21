@@ -28,7 +28,7 @@ layers:
   - P
   - {t: '[', s: '{'}
   - {t: '$$mdi:keyboard-esc$$', h: '3'}
-  - '&mtwc'
+  - {t: A, h: '&win_choose'}
   - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, h: '$$mdi:apple-keyboard-option$$'}
