@@ -49,7 +49,7 @@
         mtwc: mtwc {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            bindings = <&kp A>, <&win_choose>;
+            bindings = <&win_choose>, <&kp>;
         };
     };
 
@@ -67,7 +67,7 @@
             bindings = <
 &kp GRAVE   &kp N1           &kp N2        &kp N3        &kp N4         &kp N5  &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
 &kp TAB     &kp Q            &kp W         &kp E         &mt INS R      &kp T   &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LBKT
-&lt 3 ESC   &mtwc            &mt LSHFT S   &mt LCTRL D   &mt LEFT_ALT F &kp G   &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&lt 3 ESC   &mtwc 0 A        &mt LSHFT S   &mt LCTRL D   &mt LEFT_ALT F &kp G   &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &mt LC(Z) Z      &mt LC(X) X   &mt LC(C) C   &mt LC(V) V    &kp B   &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp LGUI
 &kp C_MUTE  &kp LCTRL        &mo 4         &kp BACKSPACE &kp SPACE &kp DELETE   &kp ENTER        &kp ENTER  &kp LSHFT  &mo 1      &kp LCTRL        &kp LEFT_ALT
             >;
