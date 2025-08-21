@@ -33,14 +33,6 @@
 
 / {
 
-    behaviors {
-        mtwc: mtwc {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&win_choose>, <&kp A>;
-        };
-    };
-
     macros {
         win_choose: win_choose {
             compatible = "zmk,behavior-macro";
@@ -50,6 +42,14 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 2 &kp LGUI>
                 ;
+        };
+    };
+
+    behaviors {
+        mtwc: mtwc {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp A>, <&win_choose>;
         };
     };
 
