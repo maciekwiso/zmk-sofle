@@ -60,7 +60,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: '4'}
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: F5, h: BACK}
+  - {t: 'Alt+$$mdi:arrow-left-bold$$', h: F5}
   - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - layer1
   - $$mdi:apple-keyboard-control$$
@@ -304,8 +304,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Alt+F4
   - F5
-  - BACK
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Alt+$$mdi:arrow-left-bold$$
+  - Alt+$$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '1', s: '!'}
