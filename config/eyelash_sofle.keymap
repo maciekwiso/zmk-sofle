@@ -63,11 +63,12 @@
         plappr: plappr {
             compatible = "zmk,behavior-macro";
             wait-ms = <30>;
-            tap-ms = <30>;
+            tap-ms = <20>;
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp P &kp L &kp E &kp A &kp S &kp E &kp SPACE &kp A &kp P &kp P &kp R &kp O &kp V &kp E>
+                = <&macro_tap &kp P &kp L &kp E &kp A &kp S &kp E &kp SPACE &kp A &kp P &kp P &kp R &kp O &kp V &kp E &kp SPACE>
                 , <&macro_tap &kp LC(V)>
+                , <&macro_wait_time 30>
                 , <&macro_tap &kp ENTER>
                 ;
         };
