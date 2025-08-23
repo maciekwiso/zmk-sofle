@@ -89,7 +89,7 @@ layers:
   - PG UP
   - PG DN
   - '&tildsl'
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&sprlab'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: ']', s: '}'}
   - $$mdi:apple-keyboard-caps$$
