@@ -45,6 +45,42 @@
                 , <&macro_release &mo 2 &kp LGUI>
                 ;
         };
+
+        blocks: blocks {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LEFT_ALT>
+                , <&macro_tap &kp END>
+                , <&macro_wait_time 1000>
+                , <&macro_tap &kp ENTER>
+                , <&macro_release &kp LCTRL &kp LEFT_ALT>
+                ;
+        };
+
+        plappr: plappr {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <30>;
+            tap-ms = <30>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp P &kp L &kp E &kp A &kp S &kp E &kp SPACE &kp A &kp P &kp P &kp R &kp O &kp V &kp E>
+                , <&macro_tap &kp LC(V)>
+                , <&macro_tap &kp ENTER>
+                ;
+        };
+
+        tildsl: tildsl {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <30>;
+            tap-ms = <30>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TILDE &kp FSLH>
+                ;
+        };
     };
 
     behaviors {
@@ -54,6 +90,13 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&win_choose>, <&kp>;
+        };
+
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LG(M)>, <&blocks>, <&plappr>;
         };
     };
 
@@ -69,11 +112,11 @@
 
         layer0 {
             bindings = <
-&kp GRAVE   &kp N1           &kp N2        &kp N3        &kp N4         &kp N5  &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp GRAVE   &kp N1           &kp N2        &kp N3        &kp N4         &kp N5  &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &td0
 &kp TAB     &kp Q            &kp W         &kp E         &mt INS R      &kp T   &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LBKT
 &lt 3 ESC   &mtwc 0 A        &mt LSHFT S   &mt LCTRL D   &mt LEFT_ALT F &kp G   &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LSHFT   &mt LC(Z) Z      &mt LC(X) X   &mt LC(C) C   &mt LC(V) V    &kp B   &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp LGUI
-&kp C_MUTE  &kp LCTRL        &mo 4         &kp BACKSPACE &kp SPACE &kp DELETE   &kp ENTER        &kp ENTER  &kp LSHFT  &mo 1      &kp LCTRL        &kp LEFT_ALT
+&kp C_MUTE  &tog 3           &mo 4         &kp BACKSPACE &kp SPACE &kp DELETE   &kp ENTER        &kp ENTER  &kp LSHFT  &mo 1      &kp LCTRL        &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -83,7 +126,7 @@
         layer_1 {
             bindings = <
 &kp F12     &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &kp F11
-&trans      &kp CARET        &kp PIPE        &kp AMPS         &kp UNDER        &kp DLLR           &mmv MOVE_DOWN   &kp PG_UP        &kp PG_DN        &trans      &trans     &trans            &kp RBKT
+&trans      &kp CARET        &kp PIPE        &kp AMPS         &kp UNDER        &kp DLLR           &mmv MOVE_DOWN   &kp PG_UP        &kp PG_DN        &tildsl     &trans     &trans            &kp RBKT
 &kp CAPS    &kp EQUAL        &kp EXCL        &mt RBRC LBRC    &mt RPAR LPAR    &kp MINUS          &mmv MOVE_LEFT   &kp LEFT         &kp DOWN         &kp UP      &kp RIGHT  &kp COLON         &trans
 &trans      &kp HASH         &kp AT          &kp PRCNT        &kp STAR         &kp PLUS           &mmv MOVE_RIGHT  &kp HOME         &kp END          &trans      &trans     &kp BSLH          &trans
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
@@ -108,10 +151,10 @@
         layer_3 {
             bindings = <
 &kp F12         &kp F1          &kp F2          &kp F3          &kp F4          &kp F5            &none           &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11
-&none           &kp HOME        &kp UP          &kp END         &none           &none             &none           &none           &none           &none           &none           &none           &none         
-&none           &kp LEFT        &kp DOWN        &kp RIGHT       &kp ENTER       &none             &none           &none           &none           &none           &none           &none           &none         
-&none           &none           &none           &none           &none           &none             &none           &none           &none           &none           &none           &none           &none         
-&trans          &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans          &trans         
+&none           &kp HOME        &kp UP          &kp END         &PG_UP          &PG_DN            &none           &none           &kp N7          &kp N8          &kp N9          &none           &none         
+&none           &kp LEFT        &kp DOWN        &kp RIGHT       &kp ENTER       &none             &none           &none           &kp N4          &kp N5          &kp N6          &none           &none         
+&none           &none           &none           &none           &none           &none             &none           &none           &kp N1          &kp N2          &kp N3          &none           &none         
+&trans          &trans          &trans          &trans          &trans          &trans            &trans          &trans          &kp N0          &trans          &trans          &trans         
             >;
         };
 
