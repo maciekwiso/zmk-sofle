@@ -102,6 +102,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <125>;
             bindings = <&win_choose>, <&kp>;
         };
 
