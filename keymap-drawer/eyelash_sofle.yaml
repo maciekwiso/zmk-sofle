@@ -213,8 +213,8 @@ layers:
   - HOME
   - $$mdi:arrow-up-bold$$
   - END
-  - '&PG_UP'
-  - '&PG_DN'
+  - PG UP
+  - PG DN
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '7', s: '&'}
