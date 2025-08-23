@@ -73,6 +73,16 @@
                 ;
         };
 
+        sprlab: sprlab {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <30>;
+            tap-ms = <20>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp S &kp P &kp R &kp I &kp N &kp G &kp DOT &kp C &kp L &kp O &kp U &kp D &kp DOT &kp C &kp O &kp N &kp F &kp I &kp G &kp DOT &kp L &kp A &kp B &kp E &kp L &kp EQUAL>
+                ;
+        };
+
         tildsl: tildsl {
             compatible = "zmk,behavior-macro";
             wait-ms = <30>;
@@ -127,7 +137,7 @@
         layer_1 {
             bindings = <
 &kp F12     &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &kp F11
-&trans      &kp CARET        &kp PIPE        &kp AMPS         &kp UNDER        &kp DLLR           &mmv MOVE_DOWN   &kp PG_UP        &kp PG_DN        &tildsl     &trans     &trans            &kp RBKT
+&trans      &kp CARET        &kp PIPE        &kp AMPS         &kp UNDER        &kp DLLR           &mmv MOVE_DOWN   &kp PG_UP        &kp PG_DN        &tildsl     &sprlab    &trans            &kp RBKT
 &kp CAPS    &kp EQUAL        &kp EXCL        &mt RBRC LBRC    &mt RPAR LPAR    &kp MINUS          &mmv MOVE_LEFT   &kp LEFT         &kp DOWN         &kp UP      &kp RIGHT  &kp COLON         &trans
 &trans      &kp HASH         &kp AT          &kp PRCNT        &kp STAR         &kp PLUS           &mmv MOVE_RIGHT  &kp HOME         &kp END          &trans      &trans     &kp BSLH          &trans
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
