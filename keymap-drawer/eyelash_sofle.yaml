@@ -54,7 +54,7 @@ layers:
   - {t: /, h: \, s: '?'}
   - LGUI
   - $$mdi:volume-off$$
-  - '&LALT'
+  - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-space$$', h: '4'}
   - {t: '$$mdi:keyboard-space$$', h: '4'}
